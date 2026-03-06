@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo-up
+    ports:
+      - 27017:27017
+
+  app:
+    image: node-nest-practice:1.0.2
+    depends_on:
+      - mongo
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/shopdb-local
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
