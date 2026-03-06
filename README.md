@@ -1,13 +1,15 @@
 # open-ai-medicine-deal
 My open ai agent deal with FDA medicine details
 
-# AI Agent Executor (Medicine Assistant)
+## AI Agent Executor (Medicine Assistant)
 
 This project implements an AI-powered medicine assistant using an Agent + Tool architecture.
 
 The system routes user queries to an AI agent which can call internal tools to retrieve medicine information. Input is validated through guardrails before being processed.
 
 ## Architecture Overview
+
+```
 User Query
     │
     ▼
@@ -31,7 +33,10 @@ Tools
     ▼
 External Services / Database
 
+```
+
 ## Agentic Ai Work Flow
+```
                  ┌──────────────────┐
 User Input ─────►│ Input Guardrail  │
                  └────────┬─────────┘
@@ -54,3 +59,4 @@ User Input ─────►│ Input Guardrail  │
                  └────────┬─────────┘
                           ▼
                       Final Answer
+```
