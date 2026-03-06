@@ -16,7 +16,7 @@ export class AiExecutor {
 
         try {
             // Step 1 — Guardrail
-            const allowed = await this.inputGuardrail.check(query);
+            await this.inputGuardrail.check(query);
 
 
             // Step 2 — Route
@@ -28,7 +28,7 @@ export class AiExecutor {
             // Step 4 — Execute Agent
             const result = await run(agent, query);
 
-            return result.finalOutput;
+            return result.finalOutput ?? "No response";
         } catch (error) {
             throw error.message
         }
